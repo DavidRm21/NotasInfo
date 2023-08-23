@@ -1,3 +1,28 @@
+
+
+# Contenido
+
+### [1. Historia](#Historia)
+
+### [2. Las reglas de Codd](#las-12-reglas-de-codd)
+
+### [3. Entidades](#¿qué-son-las-entidades)
+
+### [3.1 Atributos](#¿qué-son-los-atributos)
+
+### [4. Relaciones](#relaciones)
+
+### [5. Cardinalidad](#cardinalidad)
+
+### [6. Diagrama ER](#diagrama-er)
+
+### [7. Tipos de datos y constraints](#tipos-de-datos-y-constraints)
+
+### [8. Normalización](#normalización)
+
+<br>
+<br>
+
 # Bases de datos relacionales
 
 ## Historia
