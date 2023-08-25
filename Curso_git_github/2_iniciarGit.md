@@ -24,32 +24,6 @@
     git commit -m 'mensajeDelCambio'
     ```
 
-Otros comandos que podemos encontrar son:
-
-- Agrega todos los archivos modificados y nuevos en el directorio de trabajo al área de preparación para el próximo commit. *Es importante los espacios*
-
-    ```terminal
-    git add .
-    ```
-
-- Muestra información detallada sobre un commit específico, incluyendo cambios, autor, fecha y mensaje.
-
-    ```terminal
-    git show
-    ```
-
-- Muestra el historial de commits, cambios y detalles de autoría.
-
-    ```terminal
-    git log <archivo>
-    ```
-
-- Elimina un archivo del área de preparación. Para borrarlo por completo, usar git rm --cached.
-
-    ```terminal
-    git rm <nombreArchivo>
-    ```
-
 ## Configuración de git con nuestros datos
 
 - Muestra o configura ajustes de Git.
@@ -76,8 +50,81 @@ Otros comandos que podemos encontrar son:
     git config --global user.email "correo@mail.com"
     ```
 
-## Analizar cambios en los archivos del proyecto de git
+<hr>
 
-![git diff](https://static.platzi.com/media/user_upload/Analizar%20cambios%20en%20los%20archivos%20de%20tu%20proyecto%20con%20Git-f6f2fe08-e2e9-46ef-86fa-6180354bc151.jpg)
+## Otros comandos que podemos encontrar son:
 
-1. 
+- Agrega todos los archivos modificados y nuevos en el directorio de trabajo al área de preparación para el próximo commit. *Es importante los espacios*
+
+    ```terminal
+    git add .
+    ```
+
+- Muestra información detallada sobre un commit específico, incluyendo cambios, autor, fecha y mensaje.
+
+    ```terminal
+    git show
+    ```
+
+- Muestra el historial de commits, cambios y detalles de autoría.
+
+    ```terminal
+    git log <archivo>
+
+    git log --stat
+    ```
+
+- Elimina un archivo del área de preparación. Para borrarlo por completo, usar git rm --cached.
+
+    ```terminal
+    git rm <nombreArchivo>
+    ```
+
+- git checkout: Cambia entre versiones anteriores.
+
+- git diff: Muestra diferencias entre versiones.
+
+- git reset --hard: Revierte a una versión anterior y elimina cambios.
+
+- git reset --soft: Revierte a una versión anterior sin eliminar cambios.
+
+- git rm --cached: Elimina archivo del área de preparación pero no del disco.
+
+- git clone: Clona un repositorio remoto en local.
+
+- git push: Envía cambios locales al repositorio remoto.
+
+- git fetch: Trae cambios remotos sin mezclar.
+
+- git merge: Combina cambios en local.
+
+- git pull: Trae y mezcla cambios remotos en local.
+
+- git commit -a: Crea commit directamente en master sin pasar por el staging.
+
+- git branch: Muestra o crea ramas.
+
+- git tag: Crea y muestra versiones.
+
+- git remote: Configura repositorios remotos.
+
+- git stash: Guarda temporalmente cambios.
+
+- git clean: Borra archivos no deseados.
+
+- git cherry-pick: Trae un commit de otra rama.
+
+- git reflog: Muestra registro de acciones.
+
+- git grep: Busca palabras o archivos.
+
+- git blame: Muestra cambios y autores de línea.
+
+- git shortlog: Resumen de commits por autor.
+
+- git rebase: Cambia la base de commits (evitar en remoto).
+
+- Keygen ssh: Crea claves seguras para SSH.
+
+- Alias: Crea atajos para comandos.
+
