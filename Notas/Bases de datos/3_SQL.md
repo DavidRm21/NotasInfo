@@ -241,13 +241,13 @@ FROM posts;
     - DATEPART(): Obtiene partes específicas de una fecha/hora.
     - DATEADD(): Agrega una cantidad específica a una fecha/hora.
 
-- **Clausula WHERE**: Permite filtrar los resultados de la consulta según una o más condiciones especificadas.
+- **Clausula [WHERE](#where)**: Permite filtrar los resultados de la consulta según una o más condiciones especificadas.
 
-- **Clausula GROUP BY**: Se utiliza junto con funciones de agregación para agrupar filas que comparten valores en una o más columnas.
+- **Clausula [GROUP BY](#group-by)**: Se utiliza junto con funciones de agregación para agrupar filas que comparten valores en una o más columnas.
 
-- **Clausula HAVING**: Se utiliza con GROUP BY para filtrar los resultados después de aplicar funciones de agregación.
+- **Clausula [HAVING](#order-by-y-having)**: Se utiliza con GROUP BY para filtrar los resultados después de aplicar funciones de agregación.
 
-- **Clausula ORDER BY**: Ordena los resultados de la consulta en función de una o más columnas en orden ascendente o descendente.
+- **Clausula [ORDER BY](#order-by-y-having)**: Ordena los resultados de la consulta en función de una o más columnas en orden ascendente o descendente.
 
 - **Clausula DISTINCT**: Elimina filas duplicadas de los resultados de la consulta.
 

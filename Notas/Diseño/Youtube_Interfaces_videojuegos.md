@@ -73,4 +73,4 @@ Sensación de juego, que nos proporciona un juego cuando interactuamos con éste
 
 La iconografía abarca el origen y desarrollo de los temas de manera conceptual que se representan en las obras de arte.
 
-Se suele nutrir de los que llamamos "Imaginario popular"
+Se suele nutrir de los que llamamos "Imaginario popular" 
