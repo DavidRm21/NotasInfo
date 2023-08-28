@@ -45,4 +45,4 @@ En resumen:
 - "git reset --mixed [SHA 1]" elimina cambios hasta el directorio de trabajo.
 - "git reset --hard [SHA 1]" regresa al commit con el identificador [SHA-1].
 
-![ciclo de vida git](./gitLocalRemote.svg)
+![ciclo de vida git](./gitLocalRemoteJPG.jpg)
