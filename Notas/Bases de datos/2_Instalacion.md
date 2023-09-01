@@ -41,6 +41,23 @@ MySQL Workbench proporciona una interfaz visual intuitiva que permite a los usua
 ![Configuracion inicial base de datos](https://github.com/rb-one/Notas-fundamentos-bases-de-datos/raw/master/Notas/src/worckbench_3.png)
 *Configuración base de datos*
 
+# Oracle
+
+1. Visitamos y descargamos el instalador en el sitio web de [MySQL](https://www.oracle.com/co/database/technologies/appdev/xe.html).
+
+2. Una vez descargado, ejecutar el archivo y seguir las instrucciones en pantalla.
+
+
+
+
+### sql
+spool clase
+create table profesores
+select * from tab; // Ver las entidades creadas
+create table alumnos
+
+
+
 ## Servicios administrados
 
 Son soluciones en la nube que ofrecen la administración y operación de bases de datos relacionales de manera gestionada por proveedores de servicios en la nube. Estos servicios permiten a las organizaciones externalizar la complejidad de administrar y mantener sus bases de datos, lo que les permite centrarse más en el desarrollo de aplicaciones y en la utilización de los datos en lugar de gestionar la infraestructura subyacente.
