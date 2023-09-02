@@ -20,7 +20,7 @@ HAVING -- Los filtros que quiero que mis datos agrupados tengan
 </details>
 
 <details>
-  <summary><b>Exportar e importar mi base de datos Oracle 💾</b></summary>
+  <summary><b>Exportar e importar mi base de datos Oracle 💾 </b></summary>
 
 <br>
 <hr>
@@ -46,7 +46,7 @@ Este archivo se guardará en la ruta:
 
 <br>
 
-**Importar una base de datos Oracle.**
+**Importar una base de datos Oracle**
 
 El archivo resultante de la exportación debe ser copiado a la siguiente ruta:
 
