@@ -2,24 +2,31 @@
 <summary>Ejemplo: BD que permita las ventas de una empresa</summary>
 
 Se quiere diseñar una BD que permita registrar las ventas de una empresa.
+
 Específicamente, esta empresa necesita llevar un control de proveedores, clientes,
 productos y ventas.
+
 Un *proveedor* se modela con CUIT, nombre, dirección, teléfono y página web. Un *cliente*
 también se modela con CUIT, nombre y dirección, pero puede tener varios teléfonos de
 contacto. De cada dirección,nos interesa su calle, número, comuna y ciudad. Tanto para
 los proveedores como los clientes, el CUIT esun valor único (equivalente al DNI).
+
 De los *productos*, sabemos que tienen un identificador único, nombre, precio actual, stock
 y nombre del proveedor que los comercializa. Además se organizan en *categorías*, y cada
 producto se clasifica solamente en una de ellas, pero sin embargo una categoría clasifica
 varios productos. De ellas nos interesa saber suid, nombre y descripción.
+
 Sabemos que un producto es comercializado por varios proveedores, pero que un
 proveedor provee unsolo producto.
 Por razones de contabilidad, se debe registrar la información de cada *venta* , las cuales
-tienen un númerode factura (que es único), fecha, cliente, descuento y monto final. A
-su vez, sabemos que una venta se compone de varios productos, y por eso nos interesa
+tienen un númerode factura (que es único), fecha, cliente, descuento y monto final. 
+
+A su vez, sabemos que una venta se compone de varios productos, y por eso nos interesa
 el precio al momento de la venta del producto, la cantidad vendida y el monto total por
-él. Tenga en cuenta que un producto puede estar en varias ventas,pero que podemos
-tener un producto que no haya sido vendido. Adicionalmente, sabemos que cada clien- te
+él. 
+
+Tenga en cuenta que un producto puede estar en varias ventas,pero que podemos
+tener un producto que no haya sido vendido. Adicionalmente, sabemos que cada cliente
 puede realizar varias ventas, y en una venta solamente participa un cliente
 
 </details>
@@ -33,7 +40,7 @@ puede realizar varias ventas, y en una venta solamente participa un cliente
 
 - ¿Qué necesita la empresa o cliente?
 - ¿Cuáles son las relaciones entre entidades?
-- ¿Cuáles son los requerimientos funcionales y no funcionales? (Puede ser eleborado con los casos de uso)
+- ¿Cuáles son los requerimientos funcionales y no funcionales? 
 - ¿Cuáles son las restricciones?
 - Entre otras.
 

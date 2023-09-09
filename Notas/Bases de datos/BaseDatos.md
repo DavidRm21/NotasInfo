@@ -448,3 +448,106 @@ INSERT INTO `posts_etiquetas` (`id`,`post_id`,`etiqueta_id`) VALUES (53,2,19);
 ```
 
 </details>
+
+<details>
+<summary>Base de datos SQL - Practica 2</summary>
+
+```sql
+CREATE TABLE CLIENTE(
+  id_cliente integer PRIMARY key,
+  nombre Varchar(20) not NULL,
+  apellido1 Varchar(20),
+  apellido2 Varchar(20),
+  observaciones Varchar(10)
+  );
+  
+ create TABLE MESA(
+   id_mesa integer PRIMARY key,
+   num_max_comensal integer,
+   ubicacion varchar(30)
+   );
+
+create TABLE Camarero (
+  id_camarero integer PRIMARY KEY,
+  nombre varchar(30),
+  apellido1 varchar(20),
+  apellido2 varchar(20)
+  );
+
+Create table COCINERO(
+  id_cocinero integer PRIMARY KEY,
+  nombre varchar(30),
+  apellido1 varchar(20),
+  apellido2 varchar(20)
+  );
+
+CREATE TABLE FACTURA(
+  id_factura integer PRIMARY KEY,
+  id_cliente integer,
+  id_camarero integer,
+  id_mesa integer,
+  fecha_factura varchar(20),
+  foreign key (id_cliente) references CLIENTE(id_cliente),
+  foreign key (id_camarero) references CAMARERO(id_camarero),
+  foreign key (id_mesa) references MESA(id_mesa)
+  );
+
+CREATE TABLE DETALLEFACTURA(
+  id_factura integer,
+  id_detallefactura integer PRIMARY KEY,
+  id_cocinero integer,
+  plato varchar(30),
+  importe integer,
+  foreign key (id_factura) references FACTURA(id_factura),
+  foreign key (id_cocinero) references COCINERO(id_cocinero)
+  );
+
+INSERT INTO CLIENTE (id_cliente, nombre, apellido1, apellido2, observaciones) VALUES
+(1, 'Juan', 'Pérez', 'García', 'Cliente A'),
+(2, 'María', 'López', 'Martínez', 'Cliente B'),
+(3, 'Carlos', 'Gómez', 'Fernández', 'Cliente C'),
+(4, 'Ana', 'Rodríguez', 'Díaz', 'Cliente D'),
+(5, 'Pedro', 'Martín', 'Sánchez', 'Cliente E');
+
+INSERT INTO MESA (id_mesa, num_max_comensal, ubicacion) VALUES
+(1, 4, 'Ventana'),
+(2, 6, 'Terraza'),
+(3, 2, 'Interior'),
+(4, 8, 'Terraza'),
+(5, 4, 'Interior');
+
+INSERT INTO Camarero (id_camarero, nombre, apellido1, apellido2) VALUES
+(1, 'Luis', 'González', 'Pérez'),
+(2, 'Laura', 'Ramírez', 'Martínez'),
+(3, 'Juan', 'Sánchez', 'López'),
+(4, 'Isabel', 'Martín', 'Fernández'),
+(5, 'Ana', 'Díaz', 'Gómez');
+
+INSERT INTO COCINERO (id_cocinero, nombre, apellido1, apellido2) VALUES
+(1, 'Daniel', 'López', 'Sánchez'),
+(2, 'Carmen', 'Gómez', 'Martínez'),
+(3, 'Sergio', 'Fernández', 'Rodríguez'),
+(4, 'María', 'Díaz', 'Pérez'),
+(5, 'José', 'Martín', 'García');
+
+INSERT INTO FACTURA (id_factura, id_cliente, id_camarero, id_mesa, fecha_factura) VALUES
+(1, 1, 1, 2, '2023-09-01'),
+(2, 2, 3, 4, '2023-09-02'),
+(3, 3, 2, 1, '2023-09-03'),
+(4, 4, 4, 5, '2023-09-04'),
+(5, 5, 5, 3, '2023-09-05');
+
+INSERT INTO DETALLEFACTURA (id_factura, id_detallefactura, id_cocinero, plato, importe) VALUES
+(1, 1, 1, 'Plato 1', 20),
+(1, 2, 2, 'Plato 2', 15),
+(2, 3, 3, 'Plato 3', 18),
+(2, 4, 4, 'Plato 4', 22),
+(3, 5, 5, 'Plato 5', 25),
+(3, 6, 1, 'Plato 6', 30),
+(4, 7, 2, 'Plato 7', 16),
+(4, 8, 3, 'Plato 8', 19),
+(5, 9, 4, 'Plato 9', 28),
+(5, 10, 5, 'Plato 10', 24);
+```
+
+</details>
