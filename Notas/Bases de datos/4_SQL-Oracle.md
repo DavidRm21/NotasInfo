@@ -1,5 +1,70 @@
 # Oracle
 
+Oracle es una empresa líder en software y servicios relacionados con bases de datos, sistemas de gestión empresarial (ERP), aplicaciones en la nube y tecnología de información. 
+
+- Características
+
+  - Alta disponibilidad
+  - Escalabilidad
+  - Seguridad avanzada
+  - Confiabilidad
+  - Integración con otros sistemas y aplicaciones.
+  - Amplia comunidad y de soporte 
+  - Basado en estandares y con extensiones propietarias (SQL, PL/SQL, Oracle forms/reports, APEX, OBIEE, etc)
+
+  <br>
+  <br>
+
+# Fases para el desarrollo de un sistema
+
+## 1. Estrategia y análisis
+
+  - **Identificación de necesidades:** Comprender y documentar las necesidades y requisitos del negocio.
+  - **Definición de objetivos:** Establecer metas y objetivos para el sistema que se va a desarrollar.
+  - **Análisis de viabilidad:** Viabilidad técnica, financiera y operativa.
+  - **Estudio del mercado:** Investigación de competencia y tendencias en el mercado.
+  - **Planificación del proyecto:** Definir el alcance, el cronograma, el presupuesto, y los recursos necesarios.
+
+  <br>
+
+## 2. Diseño
+
+  - **Definir la estructura general:** Componentes principales y relaciones.
+  - **Diseño de la interfaz de usuario:** Creación de prototipos y diseños de interfaz que los usuarios interectuarán.
+  - **Diseño de la base de datos**
+  - **Diseño detallado** (Caso de uso)
+
+  <br>
+
+## 3. Construcción y documentación
+
+  - **Desarrollo de software:** Escribir el código fuente del sistema a partir de los diseños y especificaciones.
+  - **Pruebas:** Realizar pruebas unitarias y de integración para verificar su funcionamiento.
+  - **Documentación:** Crear documentación técnica y de usuario para el sistema.
+
+  <br>
+
+## 4. Transición
+
+  - **Pruebas de aceptación:** Asegurarse de que el sistema cumpla con las necesidades.
+  - **Capacitación:** de los usuarios y el personal de soporte.
+  - **Migración de datos:** Transferencia del sistema antiguo a uno más actual, en caso de que aplique.
+  - **Preparación para la puesta en marcha:** Asegurarse que todos los recursos y procesos esten listos para la implementación.
+
+  <br>
+
+## 5. Producción
+
+  - **Implentación:** Lanzar el sistema a producción.
+  - **Monitoreo y mantenimiento:** Supervisar el sistema en funcionamiento, realizar ajustes y correcciones.
+
+  <br>
+
+El desarrollo de sistemas es un proceso iterativo, a lo largo de las fases es posible que se deban realizar revisiones y ajustes en función de las retroalimentaciones y cambios en los requisitos del cliente.
+
+  <br>
+  <br>
+
 <details>
   <summary><b> Preguntando a la base de datos 🤔❔</b></summary>
 
@@ -184,6 +249,33 @@ Después de ejecutar el comando `ed`, se abrirá un editor de texto en la pantal
 
 ```sql
 SQL> /
+```
+
+### Tipos de datos
+
+VARCHAR2
+
+```sql
+-- Tiene ventajas a comparación del VARCHAR
+```
+
+NUMBER
+
+```SQL
+-- Puede ser decimal y entero
+-- Tiene mayor capacidad de almacenamiento
+```
+
+DATE
+
+```SQL
+'2017-11-23'
+'12-NOV-2023'
+```
+TIMESTAMP
+
+```sql
+'2017-11-24 08:45:41.434175'
 ```
 
 # [Consultas SQL](./3_SQL-MySQL.md) 
