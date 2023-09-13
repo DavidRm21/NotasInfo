@@ -279,3 +279,93 @@ TIMESTAMP
 ```
 
 # [Consultas SQL](./3_SQL-MySQL.md) 
+
+# Operadores en Oracle Database
+
+### 1. Operadores Aritméticos (+ - / *)
+
+<details>
+<summary><b>Tabla de prueba</b></summary>
+
+```sql
+CREATE TABLE TB_NOTAS_ALUMNOS (
+  cod_al NUMBER PRIMARY KEY,
+  nombre_al VARCHAR2 NOT NULL,
+  curso VARCHAR2,
+  nota1 NUMBER DEFAULT 0,
+  nota2 NUMBER DEFAULT 0,
+  nota3 NUMBER DEFAULT 0,
+  promedio NUMBER DEFAULT 0 
+);
+
+INSERT INTO TB_NOTAS_ALUMNOS VALUES (1, 'Carlos', 'Matematicas', 45, 30, 42, 0);
+INSERT INTO TB_NOTAS_ALUMNOS VALUES (2, 'Elena', 'Matematicas', 35, 25, 40, 0)
+INSERT INTO TB_NOTAS_ALUMNOS VALUES (3, 'Linda', 'Fisica', 45, 40, 42, 0)
+INSERT INTO TB_NOTAS_ALUMNOS VALUES (4, 'Matias', 'Quimica', 42, 38, 32, 0)
+```
+</details>
+
+***Suma de valores***
+
+```sql
+SELECT cod_al, nombre_al, (nota1+nota2+nota3) "Sumatoria_notas" FROM TB_NOTAS_ALUMNOS;
+```
+
+| cod_al  |  nombre_al | Sumatoria_notas  
+|---|---|---|
+| 1 | Carlos  | 117  |
+| 2 | Elena  | 100  |
+| 3 | Linda  | 127  |
+| 4 | Matias  |  112 |
+
+***Resta de valores***
+
+```sql
+SELECT cod_al, nombre_al, (nota1+nota2) "Acumulado_notas1y2", nota3, (nota1+nota2)-nota3 "Nota1y2Menos3"  
+FROM TB_NOTAS_ALUMNOS;
+```
+
+| cod_al  |  nombre_al | Acumulado_notas1y2 | nota3 |  Nota1y2Menos3 | 
+|---|---|---|---|---|
+| 1 | Carlos  | 75  | 42 | 33 |
+| 2 | Elena  | 60  | 40 | 20 |
+| 3 | Linda  | 85  | 42 | 43 |
+| 4 | Matias  |  80 | 32 | 48 |
+
+**Multiplicación de valores**
+
+```sql
+SELECT cod_al, nombre_al, (nota1*nota2) "Mult_Nota1y2"
+FROM TB_NOTAS_ALUMNOS;
+```
+
+| cod_al  |  nombre_al | Mult_Nota1y2  
+|---|---|---|
+| 1 | Carlos  | 1350  |
+| 2 | Elena  | 875  |
+| 3 | Linda  | 1800  |
+| 4 | Matias  |  1596 |
+
+***División de valores***
+
+La función *ROUND* nos ayuda a redondear un valor decimal en este caso solo quiero que me muestre dos decimales despues de la coma.
+
+```sql
+SELECT cod_al, nombre_al, curso, ROUND(((nota1+nota2+nota3)/3),2) "promedio"
+FROM TB_NOTAS_ALUMNOS;
+```
+
+| cod_al  |  nombre_al | curso | promedio | 
+|---|---|---|---|---|
+| 1 | Carlos  | Matematicas  | 39 |
+| 2 | Elena  | Matematicas  | 33,33 |
+| 3 | Linda  | Fisica  | 42,33 |
+| 4 | Matias  |  Quimica | 37,33 |
+
+
+
+### 2. Operadores relaciones o de comparación
+
+### 3. Operadores de concatenación
+
+### 4. Operadores lógicos
