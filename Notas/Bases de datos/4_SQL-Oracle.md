@@ -285,7 +285,7 @@ TIMESTAMP
 ### 1. Operadores Aritméticos (+ - / *)
 
 <details>
-<summary><b>Tabla de prueba</b></summary>
+<summary><b>Tabla de referencia para operadores</b></summary>
 
 ```sql
 CREATE TABLE TB_NOTAS_ALUMNOS (
@@ -305,6 +305,9 @@ INSERT INTO TB_NOTAS_ALUMNOS VALUES (4, 'Matias', 'Quimica', 42, 38, 32, 0)
 ```
 </details>
 
+<br>
+<br>
+
 ***Suma de valores***
 
 ```sql
@@ -317,6 +320,10 @@ SELECT cod_al, nombre_al, (nota1+nota2+nota3) "Sumatoria_notas" FROM TB_NOTAS_AL
 | 2 | Elena  | 100  |
 | 3 | Linda  | 127  |
 | 4 | Matias  |  112 |
+
+<br>
+<br>
+
 
 ***Resta de valores***
 
@@ -332,6 +339,9 @@ FROM TB_NOTAS_ALUMNOS;
 | 3 | Linda  | 85  | 42 | 43 |
 | 4 | Matias  |  80 | 32 | 48 |
 
+<br>
+<br>
+
 **Multiplicación de valores**
 
 ```sql
@@ -346,6 +356,9 @@ FROM TB_NOTAS_ALUMNOS;
 | 3 | Linda  | 1800  |
 | 4 | Matias  |  1596 |
 
+<br>
+<br>
+
 ***División de valores***
 
 La función *ROUND* nos ayuda a redondear un valor decimal en este caso solo quiero que me muestre dos decimales despues de la coma.
@@ -355,17 +368,72 @@ SELECT cod_al, nombre_al, curso, ROUND(((nota1+nota2+nota3)/3),2) "promedio"
 FROM TB_NOTAS_ALUMNOS;
 ```
 
-| cod_al  |  nombre_al | curso | promedio | 
-|---|---|---|---|---|
+| cod_al  |  nombre_al | curso | promedio |
+|---|---|---|---|
 | 1 | Carlos  | Matematicas  | 39 |
 | 2 | Elena  | Matematicas  | 33,33 |
 | 3 | Linda  | Fisica  | 42,33 |
 | 4 | Matias  |  Quimica | 37,33 |
 
+<br>
+<br>
 
+### 2. Operadores relaciones o de comparación (=, <>/!=, <, >, <=, >=)
 
-### 2. Operadores relaciones o de comparación
+Utilizando la clausula WHERE filtramos la información que deseamos obtener.
+
+```sql
+SELECT cod_al, nombre_al, nota1 
+FROM TB_NOTAS_ALUMNOS
+WHERE nota1 = 45;
+```
+
+| cod_al  |  nombre_al | nota1
+|---|---|---|
+| 1 | Carlos  | 45  |
+| 3 | Linda  | 45  |
+
+```sql
+SELECT cod_al, nombre_al, nota1 
+FROM TB_NOTAS_ALUMNOS
+WHERE nota1 > 30 AND nota1 <>45;
+```
+| cod_al  |  nombre_al | nota1
+|---|---|---|
+| 1 | Elena  | 35  |
+| 4 | Matias | 42 |
+
+<br>
+<br>
 
 ### 3. Operadores de concatenación
 
-### 4. Operadores lógicos
+```sql
+SELECT cod_al, nombre_al || ' - ' || curso "Nombre_Curso" 
+FROM TB_NOTAS_ALUMNOS;
+```
+
+| cod_al | Nombre_Curso
+|---|---|
+| 1 | Carlos - Matematicas  |
+| 2 | Elena - Matematicas  |
+| 3 | Linda - Fisica  |
+| 4 | Matias - Quimica  |
+
+<br>
+<br>
+
+### 4. Operadores lógicos (AND, OR, NOT, ( ) )
+
+```sql
+SELECT cod_al, nombre_al, nota3 
+FROM TB_NOTAS_ALUMNOS
+WHERE (nota3 = 30 OR nota3 <= 40);
+```
+
+| cod_al  |  nombre_al | nota3
+|---|---|---|
+| 1 | Elena  | 40  |
+| 4 | Matias | 32 |
+
+
