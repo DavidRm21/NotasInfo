@@ -277,8 +277,15 @@ TIMESTAMP
 ```sql
 '2017-11-24 08:45:41.434175'
 ```
+<br>
+<br>
+<br>
 
 # [Consultas SQL](./3_SQL-MySQL.md) 
+
+<br>
+<br>
+<br>
 
 # Operadores en Oracle Database
 
@@ -436,4 +443,441 @@ WHERE (nota3 = 30 OR nota3 <= 40);
 | 1 | Elena  | 40  |
 | 4 | Matias | 32 |
 
+<br>
+<br>
+<br>
 
+# Tipos de Funciones
+
+Algunas de las funciones que se utilizan con mayor frecuencia son:
+
+### 1. Funciones String o de cadena
+
+- ***Concatenar una cadena de texto***
+
+```sql
+SELECT CONCAT('Hola,', ' ¿Cómo estas?')
+FROM dual;
+```
+
+| CONCAT('Hola,', ' ¿Cómo estas?')  |
+|---|
+| Hola, ¿Cómo estas? | 
+
+<br>
+
+- ***Imprime el caracter del código ANSI***
+
+```sql
+SELECT chr(65)
+FROM dual;
+```
+
+| chr(64) |
+|---|
+| @ | 
+
+<br>
+
+- ***Modifica la cadena de texto para que la inicia empiece por mayuscula***
+
+```sql
+SELECT initcap('aprendiendo oracle')
+FROM dual;
+```
+
+| initcap('aprendiendo oracle') |
+|---|
+| Aprendiendo Oracle | 
+
+<br>
+
+- ***Cambia el texto a mayusculas***
+
+```sql
+SELECT upper('aprendiendo Oracle')
+FROM dual;
+```
+
+| upper('aprendiendo oracle') |
+|---|
+| APRENDIENDO ORACLE | 
+
+<br>
+
+- ***Cambia el texto a mayusculas***
+
+```sql
+SELECT lower('APRENDIENDO Oracle')
+FROM dual;
+```
+
+| lower('APRENDIENDO Oracle') |
+|---|
+| aprendiendo oracle | 
+
+<br>
+
+- ***Relleno de caracteres en la celda***
+
+```sql
+-- Rellena a la izquierda
+-- LPAD(Valor de la celda, nueva dimensión de la cadena, caracter de relleno)
+SELECT CONCAT('Puesto-', LPAD('1', 11, '0'))
+FROM dual;
+```
+
+| CONCAT('Puesto-', LPAD('1', 5, '0')) |
+|---|
+| Puesto-00001 | 
+
+```sql
+-- Rellena a la derecha
+-- RPAD(Valor de la celda, nueva dimensión de la cadena, caracter de relleno)
+SELECT CONCAT(RPAD('Puesto-', 11, '0'), '1')
+FROM dual;
+```
+
+| CONCAT(RPAD('Puesto-', 11, '0'), '1') |
+|---|
+| Puesto-0001 | 
+
+<br>
+
+- ***Eliminar espacios en blanco***
+
+```sql
+-- Elimina los espacios de la izquierda
+SELECT LTRIM('     Caja negra')
+FROM dual;
+```
+
+| LTRIM('     Caja negra') |
+|---|
+| Caja negra | 
+
+```sql
+-- Elimina los espacios de la derecha
+SELECT RTRIM('Caja blanca     ')
+FROM dual;
+```
+
+| RTRIM('Caja blanca     ') |
+|---|
+| Caja blanca | 
+
+<br>
+
+- ***Reemplzar un caracter específico***
+
+```sql
+-- REPLACE('Valor de la celda', caracter a reemplazar, caracter de reemplazo)
+SELECT REPLACE('AMAZONAS', 'A', 'I')
+FROM dual;
+```
+
+| REPLACE('AMAZONAS', 'A', 'I') |
+|---|
+| IMIZONIS | 
+
+<br>
+
+- ***Obtener un texto especifico de una cadena de texto***
+
+```sql
+-- SUBSTR('Valor de la celda', Posicion inicial, cantidad de caracteres)
+SELECT SUBSTR('Modelado de Bases de datos Oracle', 12, 14)
+FROM dual;
+```
+
+| SUBSTR('Modelado de Bases de datos Oracle', 12, 14) |
+|---|
+| Bases de datos | 
+
+<br>
+
+- ***Obtener la longitud de una cadena de texto***
+
+```sql
+SELECT LENGTH('Modelado de Bases de datos Oracle')
+FROM dual;
+```
+
+| LENGTH('Modelado de Bases de datos Oracle') |
+|---|
+| 33 | 
+
+<br>
+
+- ***Obtener el indice de la primera ocurrencia***
+
+```sql
+-- INSTR(cadena, subcadena)
+SELECT INSTR('Modelado de Bases de datos Oracle', 'Bases')
+FROM dual;
+```
+
+| INSTR('Modelado de Bases de datos Oracle', 'Bases') |
+|---|
+| 12 | 
+
+<br>
+
+- ***Obtener el indice de la primera ocurrencia***
+
+```sql
+-- TRANSLATE('Valor de celda', contenido a buscar, contenido de reemplazo)
+SELECT TRANSLATE('Modelado de Bases de datos Oracle', 'aoe', '403')
+FROM dual;
+```
+
+| TRANSLATE('Modelado de Bases de datos Oracle', 'aoe', '403') |
+|---|
+| M0d3l4d0 d3 B4s3s d3 d4t0s Or4cl3 | 
+
+<br>
+
+### 2. Funciones númericas
+
+- ***Asignar el número máximo de decimales y lo redondea***
+
+```sql
+SELECT ROUND(3.141592, 4)
+FROM dual;
+```
+
+| ROUND(3.141592) |
+|---|
+| 3.1416 | 
+
+<br>
+
+- ***Asignar el número máximo de decimales***
+
+```sql
+SELECT TRUNC(3.141592, 4)
+FROM dual;
+```
+
+| TRUNC(3.141592) |
+|---|
+| 3.1415 | 
+
+<br>
+
+- ***Obtener el modulo o residuo de una división***
+
+```sql
+SELECT MOD(11/3)
+FROM dual;
+```
+
+| MOD(11/3) |
+|---|
+| 2 | 
+
+<br>
+
+- ***Obtener el conteo total de registros de un campo***
+
+```sql
+SELECT COUNT(nombre_al)
+FROM dual;
+```
+
+| COUNT(nombre_al) |
+|---|
+| 4 | 
+
+<br>
+
+- ***Suma de campos***
+
+```sql
+SELECT SUM(cod_al)
+FROM dual;
+```
+
+| SUM(cod_al) |
+|---|
+| 10 | 
+
+<br>
+
+- ***Obtener el minimo, maximo y el promedio de los valores***
+
+```sql
+SELECT MIN(cod_al), MAX(cod_al), AVG(cod_al)
+FROM dual;
+```
+
+| MIN(cod_al) | MAX(cod_al) | AVG(cod_al) |
+|---|---|---|
+| 1 | 4 | 2,5 |
+
+### 3. Funciones Fecha y hora
+
+- ***Obtener la fecha actual***
+
+```sql
+SELECT CURRENT_DATE
+FROM dual;
+```
+
+| CURRENT_DATE | 
+|---|
+| 12/09/23 | 
+
+<br>
+
+- ***Agregar meses a la fecha***
+
+```sql
+SELECT ADD_MONTHS(CURRENT_DATE, 1)
+FROM dual;
+```
+
+| ADD_MONTHS(CURRENT_DATE, 1) | 
+|---|
+| 12/10/23 | 
+
+```sql
+SELECT ADD_MONTHS('12/12/23', 2)
+FROM dual;
+```
+
+| ADD_MONTHS('12/12/23', 2) | 
+|---|
+| 12/02/24 | 
+
+<br>
+
+- ***Obtener el ultimo dia del mes***
+
+```sql
+SELECT LAST_DAY('02/12/23')
+FROM dual;
+```
+
+| LAST_DAY('02/12/23') | 
+|---|
+| 31/12/23 | 
+
+<br>
+
+- ***Obtener el número de meses que hay entre un par de fechas***
+
+```sql
+-- Desde la fecha posterior a la anterior al ejecutarlo al contrario dará un número negativo
+SELECT MONTHS_BETWEEN('02/12/23', '12/09/23')
+FROM dual;
+```
+
+| MONTHS_BETWEEN('02/12/23', '12/09/23') | 
+|---|
+| 4 | 
+
+<br>
+
+- ***Obtener el dia siguiente***
+
+```sql
+-- Proximo dia cercano, el proximo martes que fecha es... Es necesario incluir las tildes
+SELECT NEXT_DAY('12/09/23', 'Martes')
+FROM dual;
+```
+
+| NEXT_DAY('12/09/23', 'Martes') | 
+|---|
+| 19/09/23 | 
+
+<br>
+
+- ***Obtener la fecha del sistema***
+
+```sql
+SELECT SYSDATE
+FROM dual;
+```
+
+| SYSDATE | 
+|---|
+| 19/09/23 | 
+
+<br>
+
+- ***Obtener la fecha y hora actuales***
+
+```sql
+SELECT CURRENT_TIMESTAMP
+FROM dual;
+```
+
+| CURRENT_TIMESTAMP | 
+|---|
+| 19/09/23 09:16:36,243000000 PM AMERICA/BOGOTA | 
+
+<br>
+
+- ***Obtener la fecha y hora del sistema***
+
+```sql
+SELECT SYSTIMESTAMP
+FROM dual;
+```
+
+| SYSTIMESTAMP | 
+|---|
+| 19/09/23 09:18:23,685000000 PM -05:00 | 
+
+<br>
+
+- ***Extraer el mes de una fecha***
+
+```sql
+SELECT EXTRACT(MONTH FROM SYSDATE)
+FROM dual;
+```
+
+| EXTRACT(MONTH FROM SYSDATE) | 
+|---|
+| 09 | 
+
+<br>
+
+- ***Extraer el dia de una fecha***
+
+```sql
+SELECT EXTRACT(DAY FROM SYSDATE)
+FROM dual;
+```
+
+| EXTRACT(DAY FROM SYSDATE) | 
+|---|
+| 12 | 
+
+<br>
+
+- ***Extraer el año de una fecha***
+
+```sql
+SELECT EXTRACT(YEAR FROM SYSDATE)
+FROM dual;
+```
+
+| EXTRACT(YEAR FROM SYSDATE) | 
+|---|
+| 2023 | 
+
+<br>
+
+- ***Asignar el formato de fecha***
+
+```sql
+SELECT TO_DATE('12/09/23') + 2
+FROM dual;
+```
+
+| TO_DATE('12/09/23') | 
+|---|
+| 14/09/23 | 
