@@ -124,6 +124,8 @@ Si la rutina de interrupción necesita modificar el estado del procesador, como 
 
 ### Estructura de almacenamiento
 
+![Comunicación entre CPU y RAM](https://www.ionos.es/digitalguide/fileadmin/DigitalGuide/Schaubilder/diagrama-funcionalidad-de-la-memoria-ram.png)
+
 En un sistema de computadora, los programas deben estar almacenados en la memoria principal (RAM) para poder ejecutarse. La memoria principal es el único lugar de almacenamiento grande al que la CPU puede acceder directamente. Se utiliza tecnología de semiconductores llamada DRAM (memoria dinámica de acceso aleatorio) para implementar la memoria principal, que organiza la información en una matriz de palabras de memoria, cada una con su propia dirección.
 
 El procesador interactúa con la memoria principal a través de instrucciones de carga (load) y almacenamiento (store) que mueven datos entre la memoria y registros internos de la CPU. Además de las instrucciones explícitas de carga y almacenamiento, la CPU carga automáticamente instrucciones desde la memoria principal para su ejecución.
@@ -137,6 +139,8 @@ La memoria caché se utiliza a menudo para mejorar el rendimiento al reducir los
 ### Estructura de E/S
 
 Los dispositivos de entrada y salida (E/S) son fundamentales en un sistema informático y se gestionan a través del sistema operativo para garantizar la fiabilidad y el rendimiento del sistema. En una computadora de propósito general, hay una o más CPU y múltiples controladoras de dispositivo que se conectan mediante un bus común. Cada controladora maneja un tipo específico de dispositivo, y puede haber varios dispositivos conectados a una misma controladora.
+
+![ES](https://img.freepik.com/vector-gratis/computadora-portatil-computadora-componentes-accesorios-dispositivos-electronicos_1284-10945.jpg?w=740&t=st=1695515087~exp=1695515687~hmac=e5064b286dc88ecb721b8dcd3cdf703bf9ffad39fa36a81c0b5948ac2a892747)
 
 El sistema operativo generalmente tiene un controlador de dispositivo para cada controladora de dispositivo. Estos controladores permiten que el sistema operativo se comunique de manera uniforme con los dispositivos periféricos, a pesar de las diferencias en el hardware subyacente.
 
@@ -164,37 +168,48 @@ Tienen dos o más procesadores que se comunican entre sí y comparten recursos c
 
 - **Mayor fiabilidad:** Los sistemas multiprocesador pueden seguir funcionando incluso si uno de los procesadores falla. Si hay diez procesadores y uno falla, los nueve restantes pueden asumir parte de su trabajo, lo que ralentizará el sistema en lugar de dejarlo inoperable. Esto se conoce como degradación suave. Algunos sistemas tolerantes a fallos pueden continuar operando a pesar de los fallos en componentes individuales.
 
-Existen dos tipos principales de sistemas multiprocesador: el multiprocesamiento asimétrico y el multiprocesamiento simétrico (SMP). En el multiprocesamiento asimétrico, cada procesador tiene una tarea específica, y un procesador maestro controla y asigna tareas a los procesadores esclavos. En cambio, en el SMP, todos los procesadores son iguales y no existe una relación maestro-esclavo. Los sistemas SMP permiten que múltiples procesos se ejecuten simultáneamente, pero es necesario gestionar cuidadosamente la E/S y compartir datos para evitar ineficiencias.
+Existen dos tipos principales de sistemas multiprocesador: 
+- El multiprocesamiento asimétrico: Cada procesador tiene una tarea específica, y un procesador maestro controla y asigna tareas a los procesadores esclavos. 
+
+- El multiprocesamiento simétrico (SMP): todos los procesadores son iguales y no existe una relación maestro-esclavo. Los sistemas SMP permiten que múltiples procesos se ejecuten simultáneamente, pero es necesario gestionar cuidadosamente la E/S y compartir datos para evitar ineficiencias.
 
 ### Sistemas en cluster
 
 Los sistemas en cluster son otro tipo de sistema que utiliza múltiples CPU para realizar tareas. A diferencia de los sistemas multiprocesador, los sistemas en cluster están compuestos por dos o más sistemas individuales que están conectados entre sí a través de una red de área local (LAN) o una conexión más rápida como InfiniBand. Estos sistemas en cluster suelen compartir almacenamiento y se utilizan para proporcionar servicios con alta disponibilidad, lo que significa que el servicio seguirá funcionando incluso si uno o más sistemas del cluster fallan.
 
+![](https://4.bp.blogspot.com/-nmf1_447o-I/WcVKEEcT0fI/AAAAAAAAAvM/8s29jX4YUWQeChp36suroDzZUOnqcGx6QCLcBGAs/s1600/Captura.PNG)
+
 En un cluster asimétrico, una máquina está en modo de espera en caliente mientras que la otra está ejecutando las aplicaciones. La máquina en espera monitorea al servidor activo y puede tomar su lugar si falla. En el modo simétrico, dos o más máquinas ejecutan aplicaciones y se monitorean mutuamente, lo que aprovecha mejor el hardware disponible, pero requiere que haya más de una aplicación para ejecutar.
 
 Otras variantes de clusters incluyen los clusters en paralelo, que permiten que múltiples hosts accedan a los mismos datos en un almacenamiento compartido, y los clusters conectados a una red de área extensa (WAN). Los clusters en paralelo suelen requerir software y aplicaciones especiales para gestionar el acceso simultáneo a los datos desde múltiples hosts. 
 
+<br>
+
 ## Estructura de un sistema operativo
 
- Los sistemas operativos modernos suelen ser altamente modulares y extensibles, lo que permite agregar o personalizar componentes según las necesidades específicas. Además, algunos sistemas operativos pueden estar diseñados para entornos específicos, como sistemas embebidos, servidores o dispositivos móviles, lo que afecta su estructura y funcionalidad. Una estructura general típica de un sistema operativo:
+Los sistemas operativos modernos suelen ser altamente modulares y extensibles, lo que permite agregar o personalizar componentes según las necesidades específicas. Además, algunos sistemas operativos pueden estar diseñados para entornos específicos, como sistemas embebidos, servidores o dispositivos móviles, lo que afecta su estructura y funcionalidad. Una estructura general típica de un sistema operativo:
 
-- Núcleo (Kernel): El núcleo del sistema operativo es la parte central y fundamental. Es responsable de interactuar directamente con el hardware de la computadora y gestionar los recursos del sistema, como la CPU, la memoria, los dispositivos de entrada/salida y el almacenamiento. El núcleo también gestiona la planificación de procesos, la administración de memoria y el control de dispositivos.
+![SO](http://somebooks.es/wp-content/uploads/2015/09/cap03-002.png)
 
-- Gestión de Procesos: Este componente se encarga de administrar los procesos en ejecución en el sistema. Incluye la planificación de procesos para asignar tiempo de CPU a cada proceso, la creación y destrucción de procesos, y la comunicación entre procesos.
+- **Núcleo (Kernel):** El núcleo del sistema operativo es la parte central y fundamental. Es responsable de interactuar directamente con el hardware de la computadora y gestionar los recursos del sistema, como la CPU, la memoria, los dispositivos de entrada/salida y el almacenamiento. El núcleo también gestiona la planificación de procesos, la administración de memoria y el control de dispositivos.
 
-- Gestión de Memoria: La gestión de memoria se encarga de administrar la memoria física del sistema, asignando y liberando memoria para los procesos. Esto incluye la gestión de la memoria virtual, que permite que los programas utilicen más memoria de la que está físicamente disponible.
+- **Gestión de Procesos:** Este componente se encarga de administrar los procesos en ejecución en el sistema. Incluye la planificación de procesos para asignar tiempo de CPU a cada proceso, la creación y destrucción de procesos, y la comunicación entre procesos.
 
-- Sistema de Archivos: El sistema de archivos se encarga de la gestión de los datos almacenados en dispositivos de almacenamiento, como discos duros y unidades flash. Proporciona una estructura para organizar y acceder a los archivos, directorios y metadatos.
+- **Gestión de Memoria:** La gestión de memoria se encarga de administrar la memoria física del sistema, asignando y liberando memoria para los procesos. Esto incluye la gestión de la memoria virtual, que permite que los programas utilicen más memoria de la que está físicamente disponible.
 
-- Gestión de Dispositivos: Este componente se encarga de la administración de los dispositivos de hardware, como impresoras, discos, tarjetas de red y periféricos. Facilita la comunicación entre el software y los dispositivos de hardware.
+- **Sistema de Archivos:** El sistema de archivos se encarga de la gestión de los datos almacenados en dispositivos de almacenamiento, como discos duros y unidades flash. Proporciona una estructura para organizar y acceder a los archivos, directorios y metadatos.
 
-- Interfaz de Usuario: La interfaz de usuario permite la interacción entre los usuarios y el sistema operativo. Puede ser una interfaz de línea de comandos (CLI) o una interfaz gráfica de usuario (GUI), que facilita la comunicación con el sistema.
+- **Gestión de Dispositivos:** Este componente se encarga de la administración de los dispositivos de hardware, como impresoras, discos, tarjetas de red y periféricos. Facilita la comunicación entre el software y los dispositivos de hardware.
 
-- Redes y Comunicaciones: En sistemas operativos modernos, se incluyen componentes para la gestión de redes y comunicaciones. Esto permite la conectividad a redes locales o a Internet y la comunicación entre dispositivos en red.
+- **Interfaz de Usuario:** La interfaz de usuario permite la interacción entre los usuarios y el sistema operativo. Puede ser una interfaz de línea de comandos (CLI) o una interfaz gráfica de usuario (GUI), que facilita la comunicación con el sistema.
 
-- Seguridad y Control de Acceso: La seguridad es esencial en los sistemas operativos. Este componente se encarga de garantizar la integridad de los datos y la protección contra accesos no autorizados. Incluye funciones como la autenticación de usuarios y el control de permisos.
+- **Redes y Comunicaciones:** En sistemas operativos modernos, se incluyen componentes para la gestión de redes y comunicaciones. Esto permite la conectividad a redes locales o a Internet y la comunicación entre dispositivos en red.
 
-- Gestión de Recursos: Algunos sistemas operativos incluyen componentes para la gestión de recursos, como la asignación de ancho de banda de red, la gestión de energía y la monitorización del rendimiento del sistema.
+- **Seguridad y Control de Acceso:** La seguridad es esencial en los sistemas operativos. Este componente se encarga de garantizar la integridad de los datos y la protección contra accesos no autorizados. Incluye funciones como la autenticación de usuarios y el control de permisos.
+
+- **Gestión de Recursos:** Algunos sistemas operativos incluyen componentes para la gestión de recursos, como la asignación de ancho de banda de red, la gestión de energía y la monitorización del rendimiento del sistema.
+
+<br>
 
 ## Operaciones del sistema operativo
 
@@ -214,15 +229,15 @@ Debe garantizar la protección de procesos para evitar que un error en un progra
 
 El funcionamiento de un sistema operativo se basa en el uso de dos modos de operación: el modo usuario y el modo kernel (también conocido como modo de supervisor, modo del sistema o modo privilegiado). Estos modos se utilizan para distinguir entre la ejecución de código del sistema operativo y el código definido por el usuario, proporcionando así una protección adecuada y evitando que los usuarios causen errores o problemas en el sistema. Aquí se resumen los puntos clave relacionados con estos modos de operación:
 
-- Modo Usuario y Modo Kernel: El sistema operativo y el hardware de la computadora incorporan un bit de modo que indica el estado actual del sistema, ya sea en modo usuario (bit de modo = 1) o en modo kernel (bit de modo = 0). El modo kernel es privilegiado y permite ejecutar instrucciones privilegiadas que pueden realizar tareas críticas del sistema. En contraste, el modo usuario es utilizado para la ejecución de aplicaciones de usuario.
+- **Modo Usuario y Modo Kernel:** El sistema operativo y el hardware de la computadora incorporan un bit de modo que indica el estado actual del sistema, ya sea en modo usuario (bit de modo = 1) o en modo kernel (bit de modo = 0). El modo kernel es privilegiado y permite ejecutar instrucciones privilegiadas que pueden realizar tareas críticas del sistema. En contraste, el modo usuario es utilizado para la ejecución de aplicaciones de usuario.
 
-- Cambio de Modo: Cuando se inicia el sistema, este comienza en modo kernel. Cuando se ejecuta una aplicación de usuario, el sistema cambia al modo usuario. Sin embargo, cuando se produce una excepción, una interrupción o una llamada al sistema, el sistema cambia nuevamente al modo kernel para realizar las tareas necesarias.
+- **Cambio de Modo:** Cuando se inicia el sistema, este comienza en modo kernel. Cuando se ejecuta una aplicación de usuario, el sistema cambia al modo usuario. Sin embargo, cuando se produce una excepción, una interrupción o una llamada al sistema, el sistema cambia nuevamente al modo kernel para realizar las tareas necesarias.
 
-- Protección de Instrucciones Privilegiadas: Para garantizar la seguridad y protección del sistema, algunas instrucciones se consideran privilegiadas y solo se pueden ejecutar en modo kernel. Si se intenta ejecutar una instrucción privilegiada en modo usuario, el hardware la trata como ilegal y genera una excepción que se envía al sistema operativo para su manejo.
+- **Protección de Instrucciones Privilegiadas:** Para garantizar la seguridad y protección del sistema, algunas instrucciones se consideran privilegiadas y solo se pueden ejecutar en modo kernel. Si se intenta ejecutar una instrucción privilegiada en modo usuario, el hardware la trata como ilegal y genera una excepción que se envía al sistema operativo para su manejo.
 
-- Llamadas al Sistema: Las aplicaciones de usuario pueden solicitar servicios del sistema operativo mediante llamadas al sistema. Estas llamadas al sistema son excepciones o interrupciones que permiten que el sistema operativo ejecute rutinas de servicio específicas para satisfacer las solicitudes del usuario. Las llamadas al sistema son una forma de interactuar con el sistema operativo y solicitar servicios como E/S, gestión de archivos o asignación de memoria.
+- **Llamadas al Sistema:** Las aplicaciones de usuario pueden solicitar servicios del sistema operativo mediante llamadas al sistema. Estas llamadas al sistema son excepciones o interrupciones que permiten que el sistema operativo ejecute rutinas de servicio específicas para satisfacer las solicitudes del usuario. Las llamadas al sistema son una forma de interactuar con el sistema operativo y solicitar servicios como E/S, gestión de archivos o asignación de memoria.
 
-- Protección contra Errores de Usuario: El sistema operativo, aprovechando el hardware que detecta las violaciones de modos, puede responder a errores de usuario como intentos de ejecutar instrucciones ilegales o acceder a áreas de memoria no autorizadas. Cuando se produce un error de programa, el sistema operativo puede terminar el programa de manera anormal y proporcionar mensajes de error adecuados, incluyendo la posibilidad de generar volcados de memoria para su análisis posterior.
+- **Protección contra Errores de Usuario:** El sistema operativo, aprovechando el hardware que detecta las violaciones de modos, puede responder a errores de usuario como intentos de ejecutar instrucciones ilegales o acceder a áreas de memoria no autorizadas. Cuando se produce un error de programa, el sistema operativo puede terminar el programa de manera anormal y proporcionar mensajes de error adecuados, incluyendo la posibilidad de generar volcados de memoria para su análisis posterior.
 
 En conjunto, estos conceptos y mecanismos aseguran que el sistema operativo pueda funcionar de manera segura y protegida, evitando que los errores de los programas de usuario afecten al sistema en su conjunto y permitiendo que el sistema operativo proporcione servicios esenciales a las aplicaciones de usuario de manera controlada y segura.
 
@@ -230,19 +245,22 @@ En conjunto, estos conceptos y mecanismos aseguran que el sistema operativo pued
 
 Un componente esencial para asegurar el control y evitar que un programa de usuario se ejecute indefinidamente es el temporizador. Este mecanismo se utiliza para garantizar que ningún programa tome el control de la computadora de forma permanente o sin interactuar con el sistema operativo. 
 
-Uso del Temporizador: El sistema operativo emplea el temporizador para prevenir que un programa de usuario entre en bucles infinitos o no llame a los servicios del sistema, lo que impediría que el control vuelva al sistema operativo.
+- **Uso del Temporizador:** El sistema operativo emplea el temporizador para prevenir que un programa de usuario entre en bucles infinitos o no llame a los servicios del sistema, lo que impediría que el control vuelva al sistema operativo.
 
-Configuración del Temporizador: El temporizador puede configurarse para generar una interrupción después de un período de tiempo especificado. Este período puede ser fijo o variable, según las necesidades. Para implementar un temporizador variable, se utiliza un reloj de frecuencia fija y un contador.
+- **Configuración del Temporizador:** El temporizador puede configurarse para generar una interrupción después de un período de tiempo especificado. Este período puede ser fijo o variable, según las necesidades. Para implementar un temporizador variable, se utiliza un reloj de frecuencia fija y un contador.
 
-Funcionamiento del Temporizador Variable: El sistema operativo configura el contador del temporizador. Cada vez que el reloj avanza, el contador se decrementa. Cuando el contador alcanza el valor cero, se produce una interrupción. Por ejemplo, un contador de 10 bits con un reloj de 1 milisegundo permite interrupciones en intervalos de entre 1 milisegundo y 1.024 milisegundos, en incrementos de 1 milisegundo.
+- **Funcionamiento del Temporizador Variable:** El sistema operativo configura el contador del temporizador. Cada vez que el reloj avanza, el contador se decrementa. Cuando el contador alcanza el valor cero, se produce una interrupción. Por ejemplo, un contador de 10 bits con un reloj de 1 milisegundo permite interrupciones en intervalos de entre 1 milisegundo y 1.024 milisegundos, en incrementos de 1 milisegundo.
 
-Uso para Evitar Ejecuciones Prolongadas: Antes de devolver el control al usuario, el sistema operativo asegura que el temporizador esté configurado para generar interrupciones. Cuando el temporizador interrumpe, el sistema operativo puede tomar diferentes acciones, como considerarla un error fatal o permitir que el programa continúe su ejecución.
+- **Uso para Evitar Ejecuciones Prolongadas:** Antes de devolver el control al usuario, el sistema operativo asegura que el temporizador esté configurado para generar interrupciones. Cuando el temporizador interrumpe, el sistema operativo puede tomar diferentes acciones, como considerarla un error fatal o permitir que el programa continúe su ejecución.
 
-Instrucciones Privilegiadas: Las instrucciones que modifican el contenido del temporizador se consideran instrucciones privilegiadas y solo pueden ser ejecutadas en modo kernel.
+- **Instrucciones Privilegiadas:** Las instrucciones que modifican el contenido del temporizador se consideran instrucciones privilegiadas y solo pueden ser ejecutadas en modo kernel.
 
-Límites de Tiempo: Para evitar que un programa se ejecute indefinidamente, se puede utilizar una técnica simple que consiste en inicializar un contador con un límite de tiempo permitido. Por ejemplo, un programa con un límite de tiempo de 7 minutos tendría su contador inicializado en 420. Cada segundo, el temporizador genera una interrupción y el contador se decrementa en uno. Cuando el valor del contador se vuelve negativo, el sistema operativo finaliza el programa por haber excedido el límite de tiempo asignado.
+- **Límites de Tiempo:** Para evitar que un programa se ejecute indefinidamente, se puede utilizar una técnica simple que consiste en inicializar un contador con un límite de tiempo permitido. Por ejemplo, un programa con un límite de tiempo de 7 minutos tendría su contador inicializado en 420. Cada segundo, el temporizador genera una interrupción y el contador se decrementa en uno. Cuando el valor del contador se vuelve negativo, el sistema operativo finaliza el programa por haber excedido el límite de tiempo asignado.
 
 Esto contribuye a la estabilidad y la eficiencia del sistema operativo.
+
+<br>
+<br>
 
 ## Gestión de procesos
 
@@ -266,23 +284,29 @@ La gestión de procesos es una parte esencial de los sistemas operativos, ya que
     
     - Ofrecer mecanismos para el manejo de situaciones de interbloqueo, evitando bloqueos mutuos entre procesos.
 
+<br>
+
 ## Gestión de memoria
 
 La gestión de la memoria es esencial para garantizar un uso eficiente de los recursos de memoria y mantener un rendimiento óptimo del sistema. Diversos algoritmos y técnicas se utilizan para lograr este objetivo y se adaptan según las necesidades específicas del sistema operativo y del hardware subyacente.
 
-- Memoria Principal: La memoria principal es una parte fundamental de un sistema informático moderno. Se trata de una matriz de palabras o bytes, con cada palabra o byte teniendo su propia dirección única. La memoria principal es de alta velocidad y se utiliza para almacenar datos y programas que son accesibles tanto por la CPU como por los dispositivos de entrada/salida. La CPU lee instrucciones y datos desde la memoria principal y escribe datos en ella durante la ejecución de programas.
+- **Memoria Principal:** La memoria principal es una parte fundamental de un sistema informático moderno. Se trata de una matriz de palabras o bytes, con cada palabra o byte teniendo su propia dirección única. La memoria principal es de alta velocidad y se utiliza para almacenar datos y programas que son accesibles tanto por la CPU como por los dispositivos de entrada/salida. La CPU lee instrucciones y datos desde la memoria principal y escribe datos en ella durante la ejecución de programas.
 
-- Asignación de Memoria para Programas: Para que un programa se ejecute, debe asignarse espacio en memoria y cargarse en él. Mientras el programa se ejecuta, accede a las instrucciones y datos en la memoria mediante direcciones absolutas. Una vez que el programa ha terminado, su espacio de memoria se libera y se encuentra disponible para otros programas.
+- **Asignación de Memoria para Programas:** Para que un programa se ejecute, debe asignarse espacio en memoria y cargarse en él. Mientras el programa se ejecuta, accede a las instrucciones y datos en la memoria mediante direcciones absolutas. Una vez que el programa ha terminado, su espacio de memoria se libera y se encuentra disponible para otros programas.
 
-- Gestión de Memoria Multiprogramada: Para mejorar la eficiencia de la CPU y la capacidad de respuesta del sistema frente a múltiples usuarios, las computadoras de propósito general pueden mantener varios programas en memoria al mismo tiempo. Esto requiere la gestión efectiva de la memoria para garantizar que los programas no interfieran entre sí.
+- **Gestión de Memoria Multiprogramada:** Para mejorar la eficiencia de la CPU y la capacidad de respuesta del sistema frente a múltiples usuarios, las computadoras de propósito general pueden mantener varios programas en memoria al mismo tiempo. Esto requiere la gestión efectiva de la memoria para garantizar que los programas no interfieran entre sí.
 
-- Algoritmos de Gestión de Memoria: Existen diversos esquemas y algoritmos para la gestión de la memoria, y su efectividad depende de la situación y del hardware del sistema. Cada algoritmo tiene sus propias características y requisitos de hardware. La elección de un esquema de gestión de memoria depende de las necesidades y capacidades del sistema.
+- **Algoritmos de Gestión de Memoria:** Existen diversos esquemas y algoritmos para la gestión de la memoria, y su efectividad depende de la situación y del hardware del sistema. Cada algoritmo tiene sus propias características y requisitos de hardware. La elección de un esquema de gestión de memoria depende de las necesidades y capacidades del sistema.
 
-- Responsabilidades del Sistema Operativo: En el contexto de la gestión de memoria, el sistema operativo se encarga de varias actividades clave, que incluyen:
+- **Responsabilidades del Sistema Operativo:** En el contexto de la gestión de memoria, el sistema operativo se encarga de varias actividades clave, que incluyen:
 
     - Controlar qué partes de la memoria están en uso y por quién.
+
     - Decidir qué datos y procesos se mantienen en la memoria y cuáles se retiran.
+
     - Asignar y liberar espacio de memoria según sea necesario para los programas en ejecución.
+
+<br>
 
 ## Gestión de almacenamiento
 
@@ -326,9 +350,14 @@ La gestión de almacenamiento es esencial para proporcionar a los usuarios y pro
 
 - El sistema operativo coordina la interacción entre estos componentes para administrar eficazmente las operaciones de entrada/salida.
 
+<br>
+<br>
+
 ## Protección y seguridad
 
 La protección y la seguridad son esenciales para garantizar un entorno de cómputo seguro y confiable, especialmente en sistemas con múltiples usuarios y ejecución concurrente de procesos. Estos mecanismos son críticos para proteger la integridad de los datos y recursos del sistema.
+
+![](https://culturacion.com/wp-content/uploads/2014/05/i-am-root-700x393.png?ezimgfmt=ng:webp/ngcb1)
 
 ### Protección:
 
@@ -369,10 +398,13 @@ La protección y la seguridad son esenciales para garantizar un entorno de cómp
 - El escalado de privilegios se utiliza para obtener permisos temporales adicionales y se revierte cuando ya no son necesarios.
 
 ---
+<br>
 
 ## Sistemas distribuidos
 
 Un sistema distribuido es un conjunto de computadoras físicamente separadas y posiblemente heterogéneas que están conectadas en red para proporcionar a los usuarios acceso a diversos recursos compartidos. 
+
+![](https://1.bp.blogspot.com/-KAXy6hqNckY/WcSWV01ZciI/AAAAAAAAAuw/mRj1KQb2Ba4PSTmETiPu_AW0dMUziW5UQCLcBGAs/s1600/red2.png)
 
 - Un sistema distribuido permite a múltiples usuarios y procesos acceder a recursos compartidos, lo que mejora la velocidad de cálculo, la funcionalidad y la disponibilidad de datos.
 
@@ -392,11 +424,16 @@ Un sistema distribuido es un conjunto de computadoras físicamente separadas y p
 
 - Los sistemas operativos distribuidos permiten la comunicación entre sistemas de manera que se crea la ilusión de que un único sistema operativo controla toda la red.
 
+<br>
+<br>
+
 ## Sistemas de proposito general
 
 Los sistemas de propósito general abarcan una amplia variedad de aplicaciones informáticas, desde sistemas embebidos en tiempo real hasta dispositivos multimedia y sistemas de mano, cada uno con sus desafíos y requisitos específicos. 
 
 ### Sistemas embebidos en tiempo real:
+
+![](https://img.freepik.com/foto-gratis/arreglo-coleccion-estacionaria-moderna_23-2149309649.jpg?w=1060&t=st=1695515957~exp=1695516557~hmac=dd02ed349a76b857bb49ea659aef4739f7f157bdcc9d099469d1f2a615e8c490)
 
 - Los sistemas embebidos son sistemas informáticos dedicados a tareas específicas y se encuentran en una variedad de dispositivos, desde automóviles hasta electrodomésticos.
 
@@ -405,6 +442,8 @@ Los sistemas de propósito general abarcan una amplia variedad de aplicaciones i
 - Los sistemas embebidos pueden variar desde computadoras de propósito general con sistemas operativos estándar hasta dispositivos de hardware específicos con circuitos integrados personalizados (ASIC).
 
 ### Sistemas multimedia:
+
+![](https://img.freepik.com/vector-gratis/infografia-redes-computacion-nube-que-muestran-base-datos-almacenamiento-nube-central-vinculada-computadora-portatil-tableta-escritorio-reproductor-mp3-camara-web-telefono-movil-vector-icono-wifi_1284-42980.jpg?w=740&t=st=1695516027~exp=1695516627~hmac=198ddb9810c0a3a6c649836fe908a127779f543007b60cbc549cc07e442bacac)
 
 - Los sistemas operativos tradicionales están diseñados para gestionar datos convencionales, pero los sistemas multimedia incorporan datos de audio, video y otros formatos especiales.
 
@@ -416,6 +455,8 @@ Los sistemas de propósito general abarcan una amplia variedad de aplicaciones i
 
 ### Sistemas de mano:
 
+![](https://img.freepik.com/foto-gratis/smartphone-tablets-portatil-mesa-madera_1232-918.jpg?w=1060&t=st=1695516135~exp=1695516735~hmac=239ab8097688b11c88242b63a15244cebc810cae239a60c6b8e79b67486145aa)
+
 - Los sistemas de mano incluyen dispositivos como PDA y teléfonos móviles, que a menudo utilizan sistemas operativos embebidos específicos.
 
 - Estos dispositivos enfrentan desafíos debido a su tamaño limitado, incluida la memoria limitada, procesadores más lentos y pantallas pequeñas.
@@ -425,6 +466,9 @@ Los sistemas de propósito general abarcan una amplia variedad de aplicaciones i
 - Algunos dispositivos de mano admiten conectividad inalámbrica, lo que permite el acceso remoto a datos y servicios en línea.
 
 - A pesar de las limitaciones, la portabilidad y practicidad de los dispositivos de mano los hacen cada vez más populares.
+
+<br>
+<br>
 
 ## Entornos informáticos
 
@@ -461,6 +505,12 @@ Los sistemas operativos se utilizan en una variedad de entornos informáticos, d
 - Los dispositivos tradicionales y nuevos, como estaciones de trabajo, PDAs y teléfonos móviles, se utilizan para acceder a Internet.
 
 - La Web ha llevado a la aparición de nuevos dispositivos, como mecanismos de equilibrio de carga, y ha aumentado la complejidad de muchos dispositivos debido a la demanda de conectividad web.
+
+<br>
+<br>
+<br>
+
+---
 
 # Resumen
 
