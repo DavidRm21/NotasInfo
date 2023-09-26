@@ -37,7 +37,7 @@ La perspectiva del usuario es diversa de acuerdo a la interfaz que utilice.
 
 - Mainframe o una microcomputadora:
     
-    ![P2P](https://cdn.goconqr.com/uploads/image_clipping/image/157045/Primeras_redes.JPG)
+    ![microcomputadora](./img/mainf.jpg)
 
     Otros usuarios pueden acceder simultáneamente desde otros terminales, estos usuarios comparten recursos e información. 
 
@@ -65,8 +65,6 @@ La perspectiva del usuario es diversa de acuerdo a la interfaz que utilice.
 <br>
 
 Tambien existen computadoras que tienen poca o ninguna interacción con los usuarios. Por ejemplo, en algunos electrodomesticos y en los automoviles, disponen de teclados numericos e indicadores luminosos para representar algún estado, los sistemas operativos estan diseñados para que no necesite intervención del usuario.
-
-![Computadora auto](https://www.nitro.pe/images/2016/diciembre/compu_carro.jpg)
 
 <br>
 
