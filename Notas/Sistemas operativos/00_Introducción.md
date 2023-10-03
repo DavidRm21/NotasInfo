@@ -189,7 +189,7 @@ Otras variantes de clusters incluyen los clusters en paralelo, que permiten que 
 
 Los sistemas operativos modernos suelen ser altamente modulares y extensibles, lo que permite agregar o personalizar componentes según las necesidades específicas. Además, algunos sistemas operativos pueden estar diseñados para entornos específicos, como sistemas embebidos, servidores o dispositivos móviles, lo que afecta su estructura y funcionalidad. Una estructura general típica de un sistema operativo:
 
-![SO](http://somebooks.es/wp-content/uploads/2015/09/cap03-002.png)
+![SO](./img/estructura.jpg)
 
 - **Núcleo (Kernel):** El núcleo del sistema operativo es la parte central y fundamental. Es responsable de interactuar directamente con el hardware de la computadora y gestionar los recursos del sistema, como la CPU, la memoria, los dispositivos de entrada/salida y el almacenamiento. El núcleo también gestiona la planificación de procesos, la administración de memoria y el control de dispositivos.
 
@@ -244,6 +244,8 @@ En conjunto, estos conceptos y mecanismos aseguran que el sistema operativo pued
 ### Temporizador
 
 Un componente esencial para asegurar el control y evitar que un programa de usuario se ejecute indefinidamente es el temporizador. Este mecanismo se utiliza para garantizar que ningún programa tome el control de la computadora de forma permanente o sin interactuar con el sistema operativo. 
+
+![temporizador](./img/temporizador.jpg)
 
 - **Uso del Temporizador:** El sistema operativo emplea el temporizador para prevenir que un programa de usuario entre en bucles infinitos o no llame a los servicios del sistema, lo que impediría que el control vuelva al sistema operativo.
 
