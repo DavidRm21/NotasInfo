@@ -37,7 +37,7 @@ La perspectiva del usuario es diversa de acuerdo a la interfaz que utilice.
 
 - Mainframe o una microcomputadora:
     
-    ![microcomputadora](./img/mainf.jpg)
+    ![microcomputadora](./img/mainf.jpg )
 
     Otros usuarios pueden acceder simultáneamente desde otros terminales, estos usuarios comparten recursos e información. 
 
@@ -99,7 +99,7 @@ Es aquel que gestiona los recursos de hardware y permite que las aplicaciones y 
 
 <br>
 
-### Funcion de una computadora
+### Función de una computadora
 
 Una computadora moderna de proposito general consta de una o mas CPU y de una serie de controladores de dispositivo conectadas atraves de un bus común que proporciona acceso a una memoria compartida.
 
@@ -133,6 +133,8 @@ En un ciclo típico de instrucción-ejecución, una instrucción se extrae de la
 La memoria principal es *volátil*, lo que significa que pierde su contenido cuando se corta la alimentación. Debido a la limitación de espacio y la volatilidad de la memoria principal, la mayoría de los sistemas informáticos proporcionan almacenamiento secundario para almacenar programas y datos de forma permanente.
 
 La memoria caché se utiliza a menudo para mejorar el rendimiento al reducir los tiempos de acceso entre componentes con diferentes velocidades.
+
+![Jerarquia de almacenamiento](./img/Jerarquia.jpg)
 
 ### Estructura de E/S
 
